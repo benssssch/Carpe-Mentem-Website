@@ -1,0 +1,687 @@
+:root {
+    --color-bg: #020617;         
+    --color-text: #E5E7EB;       
+    --color-brand: #096b5f;      
+    --color-nav-bg: rgba(15, 23, 42, 0.75); 
+    --color-bar-bg: rgba(15, 23, 42, 0.9);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.water {
+  display: block;
+    width: 100%;
+    height: auto;       
+    margin: 0;  
+}
+
+.container {
+    position: relative;
+}
+
+
+.brand {
+    margin: 0;
+    font-family: "Cinzel", serif;        /* interessanterer Font */
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85); /* hebt sich gut vom Bild ab */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 15%;                       /* Abstand vom oberen Bildrand */
+    left: 50%;
+    transform: translateX(-50%);    /* horizontal zentriert */
+
+    display: flex;
+    flex-direction: column;         /* Titel über Balken */
+    align-items: center;
+    gap: 1.6rem;                    /* Abstand zwischen Titel und Balken */
+
+    padding: 1.5rem 2rem;
+    width: min(900px, 100% - 3rem); /* max. Breite + Rand links/rechts */
+}
+
+
+/* Schwebende Link-Leiste über dem Bild */
+.link-bar {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background: var(--color-bar-bg);
+    border-radius: 999px;               /* pillenförmig */
+
+    display: flex;
+    justify-content: space-between;     /* Links über Breite verteilt */
+    align-items: center;
+}
+
+/* Links dezent stylen */
+.link-bar a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;                      /* dezent */
+}
+
+.link-bar a:hover,
+.link-bar a:focus {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+
+/* Brand Seite*/
+
+
+.brands {
+    max-width: 960px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.brands h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Grid-Layout für die drei Markenformen */
+
+.brand-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Ab mittlerer Bildschirmbreite (Tablet) nebeneinander */
+
+@media (min-width: 768px) {
+    .brand-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.brand-item {
+    background: rgba(15, 23, 42, 0.7);  /* leicht dunkler Kasten, falls du dunkles Theme hast */
+    border-radius: 1rem;
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.brand-item h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Bereich, in dem die Marke visuell gezeigt wird */
+
+.brand-preview {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 0.75rem;
+    padding: 1.2rem 1rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bilder für Bild- und Farbmarke */
+
+.brand-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === Spezielle Gestaltung der Wortmarke „carpe mentem“ === */
+
+.wordmark-preview {
+    /* optional leicht andere Hintergrundfarbe, damit Wortmarke hervorsticht */
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.wordmark-logo {
+    font-family: "Cinzel", serif;  /* oder eine andere markante Schrift, wenn du schon eine nutzt */
+    font-size: 1.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F97316;        /* Markenakzentfarbe */
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;   /* verhindert Zeilenumbruch in der Wortmarke */
+}
+
+.brand-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+:root {
+    --color-bg: #020617;           /* genereller Hintergrund */
+    --color-text: #E5E7EB;
+    --color-brand: #F97316;
+    --color-header-bg: rgba(15, 23, 42, 0.85);
+}
+
+/* Standard-Body */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Speziell: About-Seite mit Hintergrundbild */
+.about-page {
+    background: url("img/nadine-e-votwQUV9ts4-unsplash.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.contact-page {
+    background: url(img/aleksandr-ledogorov-G-JJy-Yv_dA-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.license-page {
+    background: url(img/florencia-viadana-pUAuMUw4ny4-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.accessibility-page {
+    background: url(img/illiya-vjestica-uwVN40_l8wI-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.privacy-page {
+    background: url(img/ryan-byrne-9tnUpg4wFWA-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* halbtransparente Fläche hinter dem Inhalt, damit Text lesbar bleibt */
+.about-page .page-content {
+    max-width: 960px;
+    margin: 5rem auto 3rem;
+    padding: 2rem 1.5rem;
+    background: rgba(2, 6, 23, 0.8); /* dunkler Overlay hinter Text */
+    border-radius: 1rem;
+}
+
+/* HEADER mit Markenname + Dropdown-Menü */
+.site-header {
+    position: fixed;          /* bleibt oben kleben */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.75rem 1.5rem;
+    background: var(--color-header-bg);
+    backdrop-filter: blur(8px); /* falls Browser das kann */
+}
+
+/* Markenlink „Carpe Mentem“ */
+.brand-link {
+    font-family: "Cinzel", serif;   /* falls du den Font verwendest */
+    font-size: 1.4rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-brand);
+}
+
+
+/* Platz nach oben, weil Header fixed ist */
+.page-content {
+    max-width: 960px;
+    margin: 5rem auto 3rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+}
+
+.nice-classes {
+    max-width: 960px;
+    margin: 2rem auto 3rem;
+    padding: 1.5rem 1.5rem 2rem;
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nice-classes h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.nice-classes p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.nice-classes ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.nice-classes li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+body.home-page {
+    background: url("img/ian-keefe-NBQhCKtg_9Y-unsplash.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+.legal-section {
+    max-width: 960px;
+    margin: 5rem auto 3rem;
+    padding: 2rem 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.legal-section h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.legal-section h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.legal-section p,
+.legal-section li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.legal-section ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.accessibility-section {
+    max-width: 960px;
+    margin: 5rem auto 3rem;
+    padding: 2rem 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.accessibility-section h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.accessibility-section h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.accessibility-section p,
+.accessibility-section li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.accessibility-section ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section,
+.imprint-section {
+    max-width: 960px;
+    margin: 5rem auto 2rem;
+    padding: 2rem 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-section h1,
+.imprint-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Formular-Layout */
+
+.contact-form {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+}
+
+.form-row label {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.form-row input,
+.form-row textarea {
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.4rem;
+    border: 1px solid #4b5563;
+    background: #020617;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 1px;
+}
+
+.form-hint {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-bottom: 0.75rem;
+}
+
+/* „Button“ – hier deaktiviert (Mock) */
+
+.btn-primary {
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background: #4b5563;
+    color: #e5e7eb;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* ========================= */
+/*        HOME-SEITE         */
+/* ========================= */
+
+.home-hero {
+    max-width: 960px;
+    margin: 0 auto 2rem;
+    padding: 2rem 1.5rem;
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+
+.home-hero h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.home-hero-lead {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.home-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(249, 250, 251, 0.35);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Allgemeine Sektionen auf der Startseite */
+
+.home-section {
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+    padding: 1.8rem 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.home-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+/* Feature-Grid */
+
+.home-feature-grid {
+    display: grid;
+    gap: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .home-feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.home-feature-card {
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 0.75rem;
+    padding: 1rem 1rem 1.2rem;
+}
+
+.home-feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.home-feature-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Zielgruppenbereich */
+
+.home-two-cols {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .home-two-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.home-two-cols h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.home-two-cols ul {
+    padding-left: 1.2rem;
+}
+
+.home-two-cols li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Abstand zwischen Hero-Bild und Inhalt auf der Startseite */
+.home-page .container {
+    margin-bottom: 0.5rem;
+}
+
+
+.home-page .page-content {
+    margin-top: 0;
+}
+
+
+/* Hero-Bereich auf der Startseite ein wenig kompakter machen */
+.home-page .container {
+    max-height: 45vh;      /* flacheres Bild */
+    overflow: hidden;
+    margin-bottom: 0;      /* KEIN Extra-Abstand nach unten */
+}
+
+
+
+.home-page .water {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Bild füllt den Container, ohne verzerrt zu wirken */
+    display: block;
+}
+
+/* Kontrast auf der Startseite verbessern */
+
+/* Markenname im Overlay: starke Akzentfarbe */
+.home-page .hero-overlay .brand {
+    color: #F97316; /* warmes Orange als Brand-Farbe */
+}
+
+/* Balken mit Links: dunkler, klarer Hintergrund + Rahmen */
+.home-page .hero-overlay .link-bar {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Links im Balken: heller, aber zurückhaltender als der Markenname */
+.home-page .hero-overlay .link-bar a {
+    color: #E5E7EB;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Hover/Fokus: klar lesbar */
+.home-page .hero-overlay .link-bar a:hover,
+.home-page .hero-overlay .link-bar a:focus {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Überschrift "Carpe Mentem" im Overlay mit besserem Kontrast */
+.home-page .hero-overlay .brand {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    background: rgba(2, 6, 23, 0.88);   /* dunkler, halbtransparenter Hintergrund */
+    border-radius: 999px;
+    color: #F97316;                     /* fast weiß für maximalen Kontrast */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.7); /* dezenter Rahmen im Schema */
+}
+
+/* Auf der Startseite: Overlay (Überschrift + Links) weiter nach unten schieben */
+.home-page .hero-overlay {
+    top: 55%;
+}
+
+/* Navigation im Header-Balken oben */
+
+.site-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.site-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.media-licenses {
+    max-width: 960px;
+    margin: 2rem auto 3rem;
+    padding: 2rem 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.media-licenses h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.media-licenses h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.media-licenses p,
+.media-licenses li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.media-licenses ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
